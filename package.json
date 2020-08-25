@@ -15,6 +15,10 @@
     "webpack-cli": "^3.3.12"
   },
   "exports": {
-    "./": "dist"
+    "./": "dist",
+    "./data": "dist/data"
+  },
+  "dependencies": {
+    "typescript-declaration-webpack-plugin": "^0.1.1"
   }
 }

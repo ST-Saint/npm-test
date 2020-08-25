@@ -1,4 +1,5 @@
-TsDeclarationWebpackPlugin = require("ts-declaration-webpack-plugin");
+const TsDeclarationWebpackPlugin = require("ts-declaration-webpack-plugin");
+const TypescriptDeclarationPlugin = require("typescript-declaration-webpack-plugin");
 path = require("path");
 
 module.exports = {
@@ -32,5 +33,10 @@ module.exports = {
       "@data": path.resolve(__dirname, "./src/data"),
     },
   },
-  plugins: [new TsDeclarationWebpackPlugin()],
+  plugins: [
+    new TypescriptDeclarationPlugin({
+      out: "main.d.ts",
+    }),
+  ],
+  // plugins: [new TsDeclarationWebpackPlugin()],
 };

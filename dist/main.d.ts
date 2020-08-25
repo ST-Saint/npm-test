@@ -1,7 +1,11 @@
-import { TestData } from "./data";
-declare class Test {
+export declare class Test {
     id: string;
     ts: Date;
     data: TestData;
 }
-export default Test;
+
+
+export declare class TestData {
+    id: string;
+    content: string;
+}

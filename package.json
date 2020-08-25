@@ -5,7 +5,7 @@
   "author": "ST-Saint",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "pack": "webpack"
   },
   "devDependencies": {
     "ts-loader": "^8.0.3",

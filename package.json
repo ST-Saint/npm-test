@@ -1,0 +1,8 @@
+{
+  "name": "npm-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ST-Saint",
+  "license": "MIT",
+  "private": true
+}

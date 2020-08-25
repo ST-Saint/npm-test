@@ -1,4 +1,4 @@
-import {TestData} from "@data";
+import {TestData} from "./data";
 
 class Test {
   id: string = "test";

@@ -5,11 +5,11 @@ path = require("path");
 module.exports = {
   entry: {
     main: "./src/main.ts",
-    data: "./src/data/index.ts",
+    // data: "./src/data/index.ts",
   },
   mode: "development",
   target: "node",
-  devtool: "inline-source-map",
+  devtool: "source-map",
   output: {
     path: __dirname + "/dist",
     filename: "[name].js",
@@ -18,7 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /dist/],
         use: {
           loader: "ts-loader",
         },
@@ -33,10 +33,10 @@ module.exports = {
       "@data": path.resolve(__dirname, "./src/data"),
     },
   },
-  plugins: [
-    new TypescriptDeclarationPlugin({
-      out: "main.d.ts",
-    }),
-  ],
   // plugins: [new TsDeclarationWebpackPlugin()],
+  // plugins: [
+  //   new TypescriptDeclarationPlugin({
+  //     out: "main.d.ts",
+  //   }),
+  // ],
 };

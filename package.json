@@ -1,11 +1,13 @@
 {
   "name": "npm-test",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/main.js",
   "author": "ST-Saint",
   "license": "MIT",
   "scripts": {
-    "pack": "webpack"
+    "build": "webpack",
+    "clean": "npx rimraf -r dist",
+    "postinstall": "npx ncp -r dist ./"
   },
   "devDependencies": {
     "ts-loader": "^8.0.3",

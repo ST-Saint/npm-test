@@ -1,13 +1,18 @@
+const TsDeclarationWebpackPlugin = require("ts-declaration-webpack-plugin");
+const TypescriptDeclarationPlugin = require("typescript-declaration-webpack-plugin");
 path = require("path");
 
 module.exports = {
-  entry: ["./src/main.ts"],
+  entry: {
+    main: "./src/main.ts",
+    data: "./src/data/index.ts",
+  },
   mode: "development",
   target: "node",
   devtool: "inline-source-map",
   output: {
     path: __dirname + "/dist",
-    filename: "main.js",
+    filename: "[name].js",
   },
   module: {
     rules: [
@@ -28,5 +33,10 @@ module.exports = {
       "@data": path.resolve(__dirname, "./src/data"),
     },
   },
-  // plugins: []
+  plugins: [
+    new TypescriptDeclarationPlugin({
+      out: "main.d.ts",
+    }),
+  ],
+  // plugins: [new TsDeclarationWebpackPlugin()],
 };
